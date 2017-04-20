@@ -14,6 +14,8 @@ class Log:SKSpriteNode {
         case top, bottom
     }
     
+    public private(set) var type: LogType = LogType.bottom;
+    
     // MARK: - Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -25,7 +27,6 @@ class Log:SKSpriteNode {
     
     convenience init(type: LogType) {
         var texture = SKTexture()
-        
         switch type {
         case .top:
             texture = Textures.sharedInstance.textureWith(name: SpriteName.topLog)
@@ -36,6 +37,7 @@ class Log:SKSpriteNode {
         
         self.init(texture: texture, color: SKColor.white, size: texture.size())
         
+        self.type = type;
         setup()
         setupPhysics()
         

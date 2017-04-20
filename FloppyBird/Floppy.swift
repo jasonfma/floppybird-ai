@@ -72,7 +72,7 @@ class Floppy:SKSpriteNode {
     func fly () {
         self.physicsBody!.velocity = CGVector.zero
         
-        let impulse = CGVector(dx: 0, dy: 25)
+        let impulse = CGVector(dx: 0, dy: 20)
         
         self.physicsBody!.applyImpulse(impulse)
         

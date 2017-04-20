@@ -12,7 +12,8 @@ class AIPlayer {
     class func play(logController: LogController, floppy: Floppy) {
         for node in logController.children {
             if let log = node as? Log {
-                NSLog("\(log.position)");
+                NSLog("\(log.type)");
+                NSLog("\(log.size.height)");
             }
         }
         
