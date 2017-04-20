@@ -10,11 +10,11 @@ import SpriteKit
 
 class Log:SKSpriteNode {
     
-    enum LogType {
+    public enum LogType {
         case top, bottom
     }
     
-    public private(set) var type: LogType = LogType.bottom;
+    public private(set) var logType: LogType?;
     
     // MARK: - Init
     required init?(coder aDecoder: NSCoder) {
@@ -37,10 +37,15 @@ class Log:SKSpriteNode {
         
         self.init(texture: texture, color: SKColor.white, size: texture.size())
         
-        self.type = type;
+        self.logType = type;
         setup()
         setupPhysics()
         
+    }
+    
+    override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Log(type: logType!)
+        return copy
     }
     
     // MARK: - Setup
