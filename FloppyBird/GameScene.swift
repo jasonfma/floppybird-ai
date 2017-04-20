@@ -96,7 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 running()
             }
         } else if state == .running {
-            floppy.fly()
+//            floppy.fly()
         }
     }
     
